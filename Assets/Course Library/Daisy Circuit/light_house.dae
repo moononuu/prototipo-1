@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.5.0" xmlns="http://www.collada.org/2008/03/COLLADASchema">
+	<asset>
+		<contributor>
+			<authoring_tool>BrawlBox</authoring_tool>
+		</contributor>
+		<created>2019-11-23T02:56:15Z</created>
+		<modified>2019-11-23T02:56:15Z</modified>
+		<unit meter="0.01" name="centimeter" />
+		<up_axis>Y_UP</up_axis>
+	</asset>
+	<library_images>
+		<image id="light_house01-image" name="light_house01">
+			<init_from>
+				<ref>light_house01.png</ref>
+			</init_from>
+		</image>
+	</library_images>
+	<library_materials>
+		<material id="toudai_light">
+			<instance_effect url="#toudai_light-fx" />
+		</material>
+	</library_materials>
+	<library_effects>
+		<effect id="toudai_light-fx" name="toudai_light">
+			<profile_COMMON>
+				<newparam sid="light_house01-surface">
+					<surface type="2D">
+						<init_from>
+							<ref>light_house01-image</ref>
+						</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="light_house01-sampler">
+					<sampler2D>
+						<source>light_house01-surface</source>
+						<instance_image url="#light_house01-image" />
+						<wrap_s>WRAP</wrap_s>
+						<wrap_t>CLAMP</wrap_t>
+						<minfilter>LINEAR</minfilter>
+						<magfilter>LINEAR</magfilter>
+					</sampler2D>
+				</newparam>
+				<technique sid="COMMON">
+					<phong>
+						<diffuse>
+							<texture texture="light_house01-sampler" texcoord="TEXCOORD0" />
+						</diffuse>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+	</library_effects>
+	<library_geometries>
+		<geometry id="polygon0" name="polygon0">
+			<mesh>
+				<source id="polygon0_Positions">
+					<float_array id="polygon0_PosArr" count="150">0 0 550 -209.1589 0 550 -181.1368 -104.5795 550 -800 0 2591.516 -692.8203 -400 2591.516 -181.1368 104.5795 550 -692.8203 400 2591.516 -104.5795 181.1368 550 -400 692.8203 2591.516 0 209.1589 550 0 800 2591.516 104.5795 181.1368 550 400 692.8203 2591.516 181.1368 104.5795 550 692.8203 400 2591.516 209.1589 0 550 800 0 2591.516 181.1368 -104.5795 550 692.8203 -400 2591.516 104.5795 -181.1368 550 400 -692.8203 2591.516 0 -209.1589 550 0 -800 2591.516 -104.5795 -181.1368 550 -400 -692.8203 2591.516 0 0 -550 -181.1368 104.5795 -550 -104.5795 181.1368 -550 -692.8203 400 -2591.516 -400 692.8203 -2591.516 209.1589 0 -550 181.1368 -104.5795 -550 800 0 -2591.516 692.8203 -400 -2591.516 181.1368 104.5795 -550 692.8203 400 -2591.516 104.5795 181.1368 -550 400 692.8203 -2591.516 0 209.1589 -550 0 800 -2591.516 -209.1589 0 -550 -800 0 -2591.516 -181.1368 -104.5795 -550 -692.8203 -400 -2591.516 -104.5795 -181.1368 -550 -400 -692.8203 -2591.516 0 -209.1589 -550 0 -800 -2591.516 104.5795 -181.1368 -550 400 -692.8203 -2591.516</float_array>
+					<technique_common>
+						<accessor source="#polygon0_PosArr" count="50" stride="3">
+							<param name="X" type="float" />
+							<param name="Y" type="float" />
+							<param name="Z" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_UVs0">
+					<float_array id="polygon0_UVArr0" count="98">0.1691895 1.210449 0.2255859 1 0.112793 1 0.3309326 0 0.007385254 0 0.2819214 1.210449 0.3383179 1 0.4437256 0 0.1201782 0 0.3947144 1.210449 0.4511108 1 0.5565186 0 0.2329712 0 0.5075073 1.210449 0.5639038 1 0.6692505 0 0.3457642 0 0.6203003 1.210449 0.6766968 1 0.7820435 0 0.4584961 0 0.7330933 1.210449 0.7894287 1 0.8948364 0 0.5712891 0 0.8458252 1.210449 0.9022217 1 1.007629 0 0.684082 0 0.9586182 1.210449 1.015015 1 1.120361 0 0.796875 0 1.071411 1.210449 1.127808 1 1.233154 0 0.909668 0 1.184204 1.210449 1.240601 1 1.345947 0 1.0224 0 1.296997 1.210449 1.353333 1 1.45874 0 1.135193 0 0.05639648 1.210449 0 1 0.2181396 0 -0.1053467 0</float_array>
+					<technique_common>
+						<accessor source="#polygon0_UVArr0" count="49" stride="2">
+							<param name="S" type="float" />
+							<param name="T" type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="polygon0_Vertices">
+					<input semantic="POSITION" source="#polygon0_Positions" />
+				</vertices>
+				<triangles material="toudai_light" count="72">
+					<input semantic="VERTEX" source="#polygon0_Vertices" offset="0" />
+					<input semantic="TEXCOORD" source="#polygon0_UVs0" set="0" offset="1" />
+					<p>2 2 1 1 0 0 3 3 1 1 2 2 4 4 3 3 2 2 1 1 5 6 0 5 6 7 5 6 1 1 3 8 6 7 1 1 5 6 7 10 0 9 8 11 7 10 5 6 6 12 8 11 5 6 7 10 9 14 0 13 10 15 9 14 7 10 8 16 10 15 7 10 9 14 11 18 0 17 12 19 11 18 9 14 10 20 12 19 9 14 11 18 13 22 0 21 14 23 13 22 11 18 12 24 14 23 11 18 13 22 15 26 0 25 16 27 15 26 13 22 14 28 16 27 13 22 15 26 17 30 0 29 18 31 17 30 15 26 16 32 18 31 15 26 17 30 19 34 0 33 20 35 19 34 17 30 18 36 20 35 17 30 19 34 21 38 0 37 22 39 21 38 19 34 20 40 22 39 19 34 21 38 23 42 0 41 24 43 23 42 21 38 22 44 24 43 21 38 23 46 2 2 0 45 4 47 2 2 23 46 24 48 4 47 23 46 27 18 26 22 25 21 28 23 26 22 27 18 29 24 28 23 27 18 31 2 30 1 25 0 32 3 30 1 31 2 33 4 32 3 31 2 30 1 34 6 25 5 35 7 34 6 30 1 32 8 35 7 30 1 34 6 36 10 25 9 37 11 36 10 34 6 35 12 37 11 34 6 36 10 38 14 25 13 39 15 38 14 36 10 37 16 39 15 36 10 38 14 27 18 25 17 29 19 27 18 38 14 39 20 29 19 38 14 26 22 40 26 25 25 41 27 40 26 26 22 28 28 41 27 26 22 40 26 42 30 25 29 43 31 42 30 40 26 41 32 43 31 40 26 42 30 44 34 25 33 45 35 44 34 42 30 43 36 45 35 42 30 44 34 46 38 25 37 47 39 46 38 44 34 45 40 47 39 44 34 46 38 48 42 25 41 49 43 48 42 46 38 47 44 49 43 46 38 48 46 31 2 25 45 33 47 31 2 48 46 49 48 33 47 48 46</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_controllers>
+		<controller id="polygon0_Controller">
+			<skin source="#polygon0">
+				<bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+				<source id="polygon0_Joints">
+					<Name_array id="polygon0_JointArr" count="1">light_house</Name_array>
+					<technique_common>
+						<accessor source="#polygon0_JointArr" count="1">
+							<param name="JOINT" type="Name" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_Matrices">
+					<float_array id="polygon0_MatArr" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+					<technique_common>
+						<accessor source="#polygon0_MatArr" count="1" stride="16">
+							<param type="float4x4" />
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="polygon0_Weights">
+					<float_array id="polygon0_WeightArr" count="1">1</float_array>
+					<technique_common>
+						<accessor source="#polygon0_WeightArr" count="1">
+							<param type="float" />
+						</accessor>
+					</technique_common>
+				</source>
+				<joints>
+					<input semantic="JOINT" source="#polygon0_Joints" />
+					<input semantic="INV_BIND_MATRIX" source="#polygon0_Matrices" />
+				</joints>
+				<vertex_weights count="50">
+					<input semantic="JOINT" offset="0" source="#polygon0_Joints" />
+					<input semantic="WEIGHT" offset="1" source="#polygon0_Weights" />
+					<vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+					<v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</v>
+				</vertex_weights>
+			</skin>
+		</controller>
+	</library_controllers>
+	<library_visual_scenes>
+		<visual_scene id="RootNode" name="RootNode">
+			<node id="light_house" name="light_house" sid="light_house" type="JOINT" />
+			<node id="polygon0" name="polygon0" type="NODE">
+				<instance_controller url="#polygon0_Controller">
+					<skeleton>#light_house</skeleton>
+					<bind_material>
+						<technique_common>
+							<instance_material symbol="toudai_light" target="#toudai_light">
+								<bind_vertex_input semantic="TEXCOORD0" input_semantic="TEXCOORD" input_set="0" />
+							</instance_material>
+						</technique_common>
+					</bind_material>
+				</instance_controller>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#RootNode" />
+	</scene>
+</COLLADA>
